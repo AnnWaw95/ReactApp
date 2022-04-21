@@ -5,8 +5,10 @@ import shortid from 'shortid';
 const reducer = (state, action) => {
   switch(action.type) {
     case 'ADD_COLUMN':
+      console.log('Add column');
       return { ...state, columns: [...state.columns, { ...action.payload, id: shortid() }]};
     case 'ADD_CARD':
+      console.log('Add card');
       return {...state, cards: [...state.cards, {...action.payload, id: shortid()}]};
     default:
       return state;
