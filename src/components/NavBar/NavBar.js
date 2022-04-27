@@ -6,7 +6,7 @@ const NavBar = () => {
       <nav>
         <Container>
             <div className={styles.navBar}>
-                <a href ="/"><span class="fa fa-tasks" /></a>
+                <a href ="/"><span className="fa fa-tasks" /></a>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/favorite">Favorite</a></li>
