@@ -22,6 +22,8 @@ export const getColumnsByList = ({columns}, listId) => columns.filter(column => 
 
 export const getAllLists = state => state.lists;
 
+export const getAllColumns = state => state.columns;
+
 function reducer  (state, action) {
   switch (action.type) {
     case 'ADD_LIST':

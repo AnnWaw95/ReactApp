@@ -1,22 +1,22 @@
 const initialState = {
     columns: [
       {
-        id: '1',
+        id: 1,
         title: 'Books',
         icon: 'book',
-        listID: 1,
+        listId: '1',
       },
       {
-        id: '2',
+        id: 2,
         title: 'Movies',
         icon: 'film',
-        listID: 1,
+        listId: '1',
       },
       {
-        id: '3',
+        id: 3,
         title: 'Games',
         icon: 'gamepad',
-        listID: 1,
+        listId: '1',
       },
       {
         id: 4,

@@ -5,13 +5,14 @@ import { addList } from '../../redux/store';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 
-const ListForm = () => {
+const ListForm = props => {
     const dispatch = useDispatch();
+    const listId = props.listId
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addList({title, description }));
+        dispatch(addList({title, description, listId }));
         setTitle('');
         setDescription('');
     };
