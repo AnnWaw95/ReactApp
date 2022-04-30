@@ -7,6 +7,7 @@ import strContains from '../utils/strContains';
 export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchString));
 
+export const getFavoriteCards = (state => state.cards.filter(card => card.isFavorite === true));
 // action creators
 export const addList = payload => ({type: 'ADD_LIST', payload});
 
@@ -24,6 +25,8 @@ export const getAllLists = state => state.lists;
 
 export const getAllColumns = state => state.columns;
 
+export const toggleFavoriteCart = payload => ({type: 'TOGGLE_CARD_FAVORITE', payload });
+
 function reducer  (state, action) {
   switch (action.type) {
     case 'ADD_LIST':
@@ -34,6 +37,8 @@ function reducer  (state, action) {
       return { ...state, cards: [...state.cards, { ...action.payload, id: shortid() }] };
     case 'UPDATE_SEARCHSTRING':
       return { ...state, ...action.payload };
+    case 'TOGGLE_CARD_FAVORITE':
+      return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };
     default:
       return state;
   };
