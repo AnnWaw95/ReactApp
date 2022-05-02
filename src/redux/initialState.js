@@ -48,7 +48,7 @@ const initialState = {
      }
    ],
 
-    searchString: ''
+   searchString: {searchString: ''}
   
   };
   
